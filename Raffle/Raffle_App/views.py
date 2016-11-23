@@ -36,7 +36,7 @@ def home(request):
     return render(request, "home.html", context)
 
 def winner(request):
-    
+
 
     if (len(names_list) ==0 ):
         title = "There were no people enetered into the draw. Please try again "
