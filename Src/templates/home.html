@@ -1,0 +1,20 @@
+<H1>{{ title }} </H1>
+<H3>{{ description}}</H3>
+<H1>{{ title2 }} </H1>
+<H3>{{ description2}}</H3>
+<H3>{{ description3}}</H3>
+<form method='POST' action=''>{% csrf_token %}
+
+{{form}}
+
+<input type='submit' value = 'Add name'>
+
+</form>
+
+<form method="GET" action='winner'>
+
+<input type='submit' value = 'Draw'>
+
+</form>
+
+
