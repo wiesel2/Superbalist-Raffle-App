@@ -6,7 +6,11 @@ names_list = []
 def home(request):
 
     title = "Welcome to the raffle"
+    title2 = "Raffle"
     description = "Enter names into the raffle and then click draw to view the winner!"
+    description2 = " has been added to the draw"
+    description3 = "Enter another name or click draw to view the winner!"
+
     form = homeForm(request.POST or None)
 
     context = {
@@ -18,6 +22,12 @@ def home(request):
     if form.is_valid():
         instance = form.cleaned_data.get("full_name")
         names_list.append(instance)
+        context = {
+            "title2": title2,
+            "description2": instance + description2,
+            "description3": description3,
+            "form": form,
+        }
 
     print names_list
 
