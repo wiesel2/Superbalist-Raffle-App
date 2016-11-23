@@ -36,24 +36,16 @@ def home(request):
     return render(request, "home.html", context)
 
 def winner(request):
-    #r = random.randint(0, (len(names_list)-1))
-    #winner_name = names_list[r]
+    r = random.randint(0, (len(names_list)-1))
+    winner_name = names_list[r]
 
-    if (len(names_list) ==0 ):
-        title = "There were no people enetered into the draw. Please try again "
-        context = {
-            "title": title,
-        }
 
-    else:
-        r = random.randint(0, (len(names_list) - 1))
-        winner_name = names_list[r]
-        title = "The winner is:"
-        context = {
-            "title": title,
-            "winner_name": winner_name
+    title = "The winner is:"
+    context = {
+        "title": title,
+        "winner_name": winner_name
 
     }
 
-        del names_list[:]
+    del names_list[:]
     return render(request, "winner.html", context)
