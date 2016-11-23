@@ -1,0 +1,12 @@
+<H1>{{ title }} </H1>
+<H3>{{ description}}</H3>
+
+<form method='POST' action=''>{% csrf_token %}
+
+{{form}}
+
+<input type='submit' value = 'Add name'>
+
+</form>
+
+
